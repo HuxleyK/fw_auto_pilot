@@ -34,7 +34,7 @@ jobs:
       
       # Environment Secrets - In Real Ensure all of the below have been created as an Environment Secret (Projects Settings > Secrets > Actions section, specially related to the environment in question) #
       databaseName: "widgetbuild"
-      JDBC: "jdbc:postgresql://localhost:5434/widgetbuild" 
+      JDBC: "jdbc:postgresql://localhost:5432/widgetbuild" 
 
       displayName: 'Build'
       executeBuild: true
@@ -89,9 +89,9 @@ jobs:
         stage: 'Prod'
         # For this example, we've hard coded the JDBC here, but you may wish to have them in your project TOML file or as Environment Secrets - (GitHub Settings > Secrets > Actions; specially related to the environment in question) #
         databaseName: "widgetprod"
-        JDBC: "jdbc:postgresql://localhost:5434/widgetprod" 
+        JDBC: "jdbc:postgresql://localhost:5432/widgetprod" 
 
-        check_JDBC: "jdbc:postgresql://localhost:5434/widgetcheck" 
+        check_JDBC: "jdbc:postgresql://localhost:5432/widgetcheck" 
         
         # End of Environment Secrets #
         generateDriftAndChangeReport: true
@@ -134,7 +134,7 @@ jobs:
     env:
       stage: 'Prod'
       databaseName: "widgetprod"
-      JDBC: "jdbc:postgresql://localhost:5434/widgetprod" 
+      JDBC: "jdbc:postgresql://localhost:5432/widgetprod" 
       
       pauseForCodeReview: true
  
